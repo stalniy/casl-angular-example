@@ -1,18 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
+import { AbilityModule } from '@casl/angular';
+import { Ability } from '@casl/ability';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { defineAbilitiesFor, createAbility } from '../services/ability';
+import { AppRoutingModule } from './routing.module';
+import App from './app.component';
+import TodoForm from './todo/form.component';
+import TodoList from './todo/list.component';
+import TodoFooter from './todo/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    App,
+    TodoForm,
+    TodoList,
+    TodoFooter,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AbilityModule.forRoot(),
+    FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: Ability, useFactory: createAbility }
+  ],
+  bootstrap: [App]
 })
 export class AppModule { }
