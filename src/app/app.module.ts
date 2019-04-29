@@ -5,7 +5,6 @@ import { AbilityModule } from '@casl/angular';
 import { Ability } from '@casl/ability';
 
 import { defineAbilitiesFor, createAbility } from '../services/ability';
-import { AppRoutingModule } from './routing.module';
 import App from './app.component';
 import TodoForm from './todo/form.component';
 import TodoList from './todo/list.component';
@@ -20,7 +19,6 @@ import TodoFooter from './todo/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     AbilityModule.forRoot(),
     FormsModule
   ],
