@@ -1,27 +1,33 @@
-# CaslAngularExample
+# CASL and Angular integration example
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
+This example shows how to integrate [CASL][casl-ability] auhorization (i.e. permissions) in Angular application by using completmentary module [@casl/angular][casl-angular]. Read [Managing user permissions in Angular app](#) for detailed explanation.
 
-## Development server
+> Generated with angular cli
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Installation
 
-## Code scaffolding
+``` bash
+# install dependencies
+npm install 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# serve with hot reload at localhost:4200
+npm start
+```
 
-## Build
+## Description
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+This application is a basic Todo application with possibility to specify assignee for a task. By default, all users are able to create and read all tasks but update and delete only assigned to them. Any user may create a task and assign it to other users.
 
-## Running unit tests
+Ability configuration can be found in [src/services/ability.js](./src/services/ability.js), the function that creates `Ability` instance is in the same file. 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Example
 
-## Running end-to-end tests
+```html
+<todo-form 
+  (newTodo)="addTodo($event)" 
+  *ngIf="'Todo' | can: 'create'"
+></todo-form>
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+[casl-ability]: https://github.com/stalniy/casl/tree/master/packages/casl-ability
+[casl-angular]: https://github.com/stalniy/casl/tree/master/packages/casl-angular
