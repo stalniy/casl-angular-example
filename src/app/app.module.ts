@@ -1,18 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { NgModule, APP_INITIALIZER } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { AbilityModule } from '@casl/angular';
 import { Ability } from '@casl/ability';
 
-import { defineAbilitiesFor, createAbility } from '../services/ability';
-import App from './app.component';
-import TodoForm from './todo/form.component';
-import TodoList from './todo/list.component';
-import TodoFooter from './todo/footer.component';
+import { createAbility } from '../services/ability';
+import { AppComponent } from './app.component';
+import { TodoForm } from './todo/form.component';
+import { TodoList } from './todo/list.component';
+import { TodoFooter } from './todo/footer.component';
 
 @NgModule({
   declarations: [
-    App,
+    AppComponent,
     TodoForm,
     TodoList,
     TodoFooter,
@@ -25,6 +25,6 @@ import TodoFooter from './todo/footer.component';
   providers: [
     { provide: Ability, useFactory: createAbility }
   ],
-  bootstrap: [App]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -128,7 +128,7 @@ import { Component } from '@angular/core';
     }
   `]
 })
-export default class AppComponent {
+export class AppComponent {
   title = 'Todos';
   todos = [];
 

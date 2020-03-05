@@ -10,9 +10,9 @@ import { defineAbilitiesFor } from '../../services/ability';
         <strong>{{ remaining }}</strong> left
       </span>
       <ul class="filters">
-        <li class="help" title="Admin - can do anything. Member can read everything and manage todos with assignee 'me'">Switch roles</li>
-        <li><a href="#" [class.selected]="role == 'admin'" (click)="setRole('admin')">Admin</a></li>
-        <li><a href="#" [class.selected]="role == 'member'" (click)="setRole('member')">Member</a></li>
+        <li class="help" title="Admin - can do anything. Member can read everything and manage todos with assignee 'me'" i18n i18n-title>Switch roles</li>
+        <li><a href="#" [class.selected]="role == 'admin'" (click)="setRole('admin')" i18n>Admin</a></li>
+        <li><a href="#" [class.selected]="role == 'member'" (click)="setRole('member')" i18n>Member</a></li>
       </ul>
     </footer>
   `,
@@ -80,7 +80,7 @@ import { defineAbilitiesFor } from '../../services/ability';
     }
   `]
 })
-export default class TodoFooter {
+export class TodoFooter {
   @Input() items = [];
 
   role = 'member';

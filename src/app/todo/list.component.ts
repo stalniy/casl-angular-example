@@ -132,7 +132,7 @@ import { Ability } from '@casl/ability'
     }
   `]
 })
-export default class TodoList {
+export class TodoList {
   @Input() items = [];
   @Output('remove') onRemoveTodo = new EventEmitter();
 

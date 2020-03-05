@@ -13,7 +13,7 @@ import { Component, Output, EventEmitter } from '@angular/core'
         (keyup.enter)="addTodo()">
 
       <select name="assignee" [(ngModel)]="newTodo.assignee">
-        <option value="" disabled>Choose Assignee</option>
+        <option value="" disabled i18n>Choose Assignee</option>
         <option>me</option>
         <option>John Doe</option>
         <option>Alex Pupkin</option>
@@ -70,7 +70,7 @@ import { Component, Output, EventEmitter } from '@angular/core'
     }
   `]
 })
-export default class TodoForm {
+export class TodoForm {
   @Output('newTodo') onNewTodo = new EventEmitter();
 
   placeholder = 'What needs to be done?';
