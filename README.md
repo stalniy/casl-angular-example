@@ -1,5 +1,9 @@
 # CASL and Angular integration example
 
+## DEPRECATED
+
+The example has been moved to https://github.com/stalniy/casl-examples/tree/master/packages/angular-todo
+
 This example shows how to integrate [CASL][casl-ability] auhorization (i.e. permissions) in Angular application by using completmentary module [@casl/angular][casl-angular]. Read [Managing user permissions in Angular app](https://medium.com/@sergiy.stotskiy/managing-user-permissions-in-angular-application-504c83752f83) for detailed explanation.
 
 > Generated with angular cli
